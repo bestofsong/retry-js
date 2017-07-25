@@ -20,6 +20,9 @@ export default (() => {
       if (res) {
         return true;
       }
+      if (ii === 1) {
+        return false;
+      }
       return delayi(ii).then(() => {
         return exec(op, ii - 1, delayi, handle);
       });
