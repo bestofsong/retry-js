@@ -2,7 +2,7 @@
 type OP = () => Promise<bool>;
 type Handle = { cancel: () => {}, canceled: () => bool };
 
-export default  (() => {
+export default (() => {
   function delay(t) {
     return new Promise(resolve => setTimeout(resolve, t));
   }
@@ -21,15 +21,12 @@ export default  (() => {
         return true;
       }
       return delayi(ii).then(() => {
-        if (handle.canceled()) {
-          return false;
-        }
         return exec(op, ii - 1, delayi, handle);
       });
     });
   }
 
-  return (op: OP, max: number = 10): [Promise<bool>, () => {}] => {
+  return (op: OP, max: number = 10): [Promise<bool>, Handle] => {
     if (!max) {
       throw new Error('fuck');
     }
