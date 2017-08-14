@@ -1,10 +1,11 @@
 {
   "name": "ssretry",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "files": ["index.js", "__tests__"],
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-es2015-destructuring": "6.23.0",
