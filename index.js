@@ -1,6 +1,14 @@
+/**
+ * @Author: wansong
+ * @Date:   2017-07-25T17:36:05+08:00
+ * @Email:  betterofsong@gmail.com
+ */
+
+
+
 // @flow
 type OP = () => Promise<bool>;
-type Handle = { cancel: () => {}, canceled: () => bool };
+type Handle = { cancel: () => void, canceled: () => bool };
 
 export default (() => {
   function delay(t) {
@@ -44,4 +52,3 @@ export default (() => {
     return [promise, handle];
   };
 })();
-
