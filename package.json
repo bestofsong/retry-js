@@ -1,9 +1,9 @@
 {
   "name": "ssretry",
-  "version": "1.0.5",
-  "main": "src/index.js",
+  "version": "1.0.6",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest \"lib/*\"",
     "prepublish": "node_modules/.bin/babel src --out-dir lib"
   },
   "files": [
